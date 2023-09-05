@@ -1,0 +1,41 @@
+/* Reset default margin and padding */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color for the entire page */
+.App {
+  background-image: url("https://wallpapers.com/images/featured/diablo-2-resurrected-y2kyo5vzff6o8nkn.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%; /* Make the image responsive and fit its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  margin: 0 auto; /* Center the image horizontally */
+  font-family: Arial, sans-serif;
+}
+.main-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.main-container.visible {
+  opacity: 1;
+}
+
+/* Create a main container using flexbox */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+}
