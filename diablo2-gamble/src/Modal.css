@@ -1,0 +1,35 @@
+.modalBackground {
+    position: fixed;
+    top: 32%;
+    left: 22.7%;
+    width: 10%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: 1px solid gold; /* Gold-colored border */
+    border-radius: 10px; /* Border radius for rounded corners */
+      }
+.modalContainer {
+  margin: 10% auto; /* Center the modal vertically */
+  max-width: 80%; /* Maximum width of the modal */
+  text-align: center;
+  position: relative;
+}
+.title {
+    font-family: 'Diablo', sans-serif;
+    color: rgb(206, 183, 83);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #7a7973; /* Text color */
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    color: rgb(6, 26, 92);
+  outline: none; /* Remove outline on focus */
+  text-decoration: none; /* Remove underline on hover and focus */
+}

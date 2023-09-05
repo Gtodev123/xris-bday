@@ -4,6 +4,7 @@ import {useState , useEffect } from 'react'
 import Left from './Left';
 import Right from './Right';
 
+
 function App() {
 
   const [isVisible, setIsVisible] = useState(false);
