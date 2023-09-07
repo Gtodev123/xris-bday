@@ -5,31 +5,56 @@
     width: 10%;
     height: 25%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border: 1px solid gold; /* Gold-colored border */
-    border-radius: 10px; /* Border radius for rounded corners */
-      }
-.modalContainer {
-  margin: 10% auto; /* Center the modal vertically */
-  max-width: 80%; /* Maximum width of the modal */
-  text-align: center;
-  position: relative;
-}
-.title {
+    border: 1px solid rgb(196, 143, 29); /* Gold-colored border */
+    border-radius: 2px; /* Border radius for rounded corners */
+  }
+  
+  .modalContainer {
+    margin: 10% auto; /* Center the modal vertically */
+    text-align: center;
+  }
+  
+  .title {
     font-family: 'Diablo', sans-serif;
     color: rgb(206, 183, 83);
-}
+  }
+  h4 {
+    color: rgb(206, 183, 83);
+  }
+  p {
+    font-family: 'Diablo', sans-serif;
+    color: rgb(206, 183, 83);
+  }
+  
+  .button-container {
+    width: 5%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px; /* Adjust the font size as needed */
+    color: #7a7973; /* Text color */
+    cursor: pointer;
+  }
+  
+  button:hover,
+  button:focus {
+    color: rgb(11, 41, 143);
+    outline: none; /* Remove outline on focus */
+    cursor: url('./asets/cursor.png'), auto;
 
-button {
-  background-color: transparent;
-  border: none;
-  font-size: 14px; /* Adjust the font size as needed */
-  color: #7a7973; /* Text color */
-  cursor: pointer;
-}
+  }
 
-button:hover,
-button:focus {
-    color: rgb(6, 26, 92);
-  outline: none; /* Remove outline on focus */
-  text-decoration: none; /* Remove underline on hover and focus */
-}
+  .button1{
+    /* Add margin to create spacing between buttons */
+    margin-left: 8rem;
+  }
+  .button2{
+    /* Add margin to create spacing between buttons */
+    margin-left: 8rem;
+  }

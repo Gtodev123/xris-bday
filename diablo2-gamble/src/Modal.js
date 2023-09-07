@@ -7,11 +7,11 @@ function Modal({ closeModal }) {
     <div className='modalBackground'>
         <div className='modalContainer'>
             <h5 className='title'>Buy</h5>
-            <p>Coronet</p>
+            <h4>Coronet</h4>
             <p>144880 gold</p>
             <div className='button-container'>
-            <button className='button'>Yes</button>
-            <button className='button' onClick={() => closeModal(false)}>No</button>
+            <button className='button1'>Yes</button>
+            <button className='button2' onClick={() => closeModal(false)}>No</button>
             </div>
         </div>
     </div>
