@@ -28,7 +28,7 @@ function Left() {
      <img className='gheedbackground' src={left} alt="gheed" />
      {openModal && <Modal closeModal={setOpenModal}/>}
      <img onClick={() => {setOpenModal(true)}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='unhoveredCoronet' src={isHovered ? hoveredCoronet : unhoveredCoronet} alt='unhovered coronet'/>
-     <img style={{display: 'none'}}className='hoveredCoronet' src={hoveredCoronet} alt='unhovered coronet'/>
+     <img onHover={() => {}} style={{display: 'none'}}className='hoveredCoronet' src={hoveredCoronet} alt='unhovered coronet'/>
     </div>
   );
 }
