@@ -8,7 +8,7 @@ import Right from './Right';
 function App() {
 
   const [isVisible, setIsVisible] = useState(false);
-
+  
   useEffect(() => {
     // Set isVisible to true after a delay
     const timeout = setTimeout(() => {
@@ -25,6 +25,8 @@ function App() {
     <div className={`main-container ${isVisible ? 'visible' : ''}`}>
      <Left />
      <Right />
+
+
   </div>
   </div>
   );
