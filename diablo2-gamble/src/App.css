@@ -12,26 +12,18 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%; /* Make the image responsive and fit its container */
-  height: auto; /* Maintain the image's aspect ratio */
+  height: 100vh; /* Maintain the image's aspect ratio */
   margin: 0 auto; /* Center the image horizontally */
   font-family: Arial, sans-serif;
 }
 .main-container {
+  display: flex;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
 .main-container.visible {
   opacity: 1;
-}
-
-/* Create a main container using flexbox */
-.main-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
 }
 
 

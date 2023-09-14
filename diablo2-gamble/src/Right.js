@@ -5,7 +5,7 @@ import './Right.css'
 
 function Right() {
   return (
-    <div className="Inventory">
+    <div className="inventory">
      <h2>Inventory</h2>
      <img src={right} alt="gheed" />
     </div>

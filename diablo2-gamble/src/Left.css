@@ -1,28 +1,13 @@
-.GheedStore {
-    width: 30.3rem;
-    max-width: 600px; /* Set the maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding in the total width */
-    position: relative;
-    /* Define the container's background color or any other styles */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center the image horizontally */
-  }
 
   .gheedbackground {
-    width: 100%; /* Make the image responsive and fit its container */
-    height: auto; /* Maintain the image's aspect ratio */
-    display: block; /* Remove any default inline styling on images */
-    margin: 0 auto; /* Center the image horizontally */
+    width: 71.5%; /* Make the image responsive and fit its container */
   }
 
   .unhoveredCoronet {
-    width: 13%; /* Adjust the width to make it smaller */
     height: auto; /* Automatically adjust the height while maintaining aspect ratio */
     position: absolute;
-    top: 65.1%; /* Adjust to position vertically */
-    left: 57.7%; /* Adjust to position horizontally */
+    top: 55.1%; /* Adjust to position vertically */
+    left: 35.7%; /* Adjust to position horizontally */
     transform: translate(-50%, -50%); /* Center the image relative to its parent */
     /* Additional styles as needed */
   }

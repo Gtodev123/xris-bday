@@ -1,9 +1,7 @@
 
 import './App.css';
 import {useState , useEffect } from 'react'
-import Left from './Left';
-import Right from './Right';
-
+import Home from './Home'
 
 function App() {
 
@@ -23,10 +21,7 @@ function App() {
   return (
     <div className='App'>
     <div className={`main-container ${isVisible ? 'visible' : ''}`}>
-     <Left />
-     <Right />
-
-
+    <Home />
   </div>
   </div>
   );
