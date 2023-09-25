@@ -2,7 +2,12 @@
 import './App.css';
 import {useState , useEffect } from 'react'
 import Home from './Home'
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route, Link,
+} from "react-router-dom";
+import Stash from './Stash';
 function App() {
 
   const [isVisible, setIsVisible] = useState(false);
@@ -19,11 +24,22 @@ function App() {
 
 
   return (
+<Router>
     <div className='App'>
+      <div className='navbar'>
+      <Link className='link' to='/'>Home</Link>
+      <Link className='link' to='/stash'>Stash</Link>
+      </div>
+      
     <div className={`main-container ${isVisible ? 'visible' : ''}`}>
-    <Home />
+
+    <Routes>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='/stash' element={<Stash />}></Route>
+    </Routes>
   </div>
   </div>
+  </Router>
   );
 }
 

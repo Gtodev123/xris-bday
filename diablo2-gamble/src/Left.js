@@ -24,7 +24,7 @@ function Left() {
 
   return (
     <div className="GheedStore">
-     <h2>Gheed Shop</h2>
+     <h2 className='HomeH2'>Gheed Shop</h2>
      <img className='gheedbackground' src={left} alt="gheed" />
      {openModal && <Modal closeModal={setOpenModal}/>}
      <img onClick={() => {setOpenModal(true)}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='unhoveredCoronet' src={isHovered ? hoveredCoronet : unhoveredCoronet} alt='unhovered coronet'/>

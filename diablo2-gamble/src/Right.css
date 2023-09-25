@@ -1,3 +1,7 @@
+
 .inventory img {
-  width: 70%; /* Make the image responsive and fit its container */
+  width: 50%; /* Make the image responsive and fit its container */
+  height: auto;
+  float: right;
+  padding-right: 20%;
 }

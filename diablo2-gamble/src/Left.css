@@ -1,55 +1,16 @@
 
   .gheedbackground {
-    width: 71.5%; /* Make the image responsive and fit its container */
+    width: 50%; /* Make the image responsive and fit its container */
+    height: auto;
+    float: left;
+    padding-left: 20%;
   }
 
-  .unhoveredCoronet {
-    height: auto; /* Automatically adjust the height while maintaining aspect ratio */
+       .unhoveredCoronet {
+    height: 8%;
     position: absolute;
-    top: 55.1%; /* Adjust to position vertically */
+    top: 60%; /* Adjust to position vertically */
     left: 35.7%; /* Adjust to position horizontally */
     transform: translate(-50%, -50%); /* Center the image relative to its parent */
     /* Additional styles as needed */
-  }
-
-  @media (min-width: 880px) and (max-width: 990px) {
-    .unhoveredCoronet {
-      max-width: 77%; /* Adjust the maximum width for smaller screens */
-      top: 65%;
-    }
-  }
-
-
-  @media (min-width: 780px) and (max-width: 880px) {
-    .unhoveredCoronet {
-      max-width: 77%; /* Adjust the maximum width for smaller screens */
-      top: 65.7%;
-    }
-  }
-
-  @media (min-width: 710px) and (max-width: 779px) {
-    .unhoveredCoronet {
-      max-width: 67%; /* Adjust the maximum width for smaller screens */
-      top: 66.3%;
-    }
-  }
-  @media (min-width: 680px) and (max-width: 710px) {
-    .unhoveredCoronet {
-      max-width: 39%; /* Adjust the maximum width for smaller screens */
-      top: 66.6%;
-    }
-  }
-  @media (min-width: 500px) and (max-width: 680px) {
-    .unhoveredCoronet {
-      max-width: 12%; /* Adjust the maximum width for smaller screens */
-      top: 66.5%;
-      left: 57%;
-    }
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    .unhoveredCoronet {
-      max-width: 11%; /* Adjust the maximum width for smaller screens */
-      top: 68%;
-      left: 56.7%;
-    }
   }

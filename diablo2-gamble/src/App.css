@@ -11,15 +11,17 @@ body, html {
   background-image: url("https://wallpapers.com/images/featured/diablo-2-resurrected-y2kyo5vzff6o8nkn.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 100%; /* Make the image responsive and fit its container */
-  height: 100vh; /* Maintain the image's aspect ratio */
-  margin: 0 auto; /* Center the image horizontally */
-  font-family: Arial, sans-serif;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+
 }
 .main-container {
-  display: flex;
+  width: 100%;
+  height: fit-content;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+
 }
 
 .main-container.visible {

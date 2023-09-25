@@ -1,11 +1,21 @@
 .background {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 14%;
-    padding-top: 4%;
-
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ padding-top: 5%;
+ flex-direction: row;
+ justify-content: space-between;
+ overflow: hidden;
 }
 
-h2 {
+.HomeH2 {
     padding-left: 23%;
 }
+
+
+@media screen and (min-width: 1700px) {
+        .background {
+            padding-left: 1%
+        }
+    }
+    
