@@ -33,3 +33,17 @@ h2 {
   font-family: 'Diablo', sans-serif;
   color:red;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+}
+.link img {
+  width: 200px;
+  cursor: url('./asets/cursor.png'), auto;
+}

@@ -8,6 +8,10 @@ import {
   Route, Link,
 } from "react-router-dom";
 import Stash from './Stash';
+import button from './asets/button.png'
+import buttonStash from './asets/buttonStash.png'
+
+
 function App() {
 
   const [isVisible, setIsVisible] = useState(false);
@@ -27,8 +31,8 @@ function App() {
 <Router>
     <div className='App'>
       <div className='navbar'>
-      <Link className='link' to='/'>Home</Link>
-      <Link className='link' to='/stash'>Stash</Link>
+      <Link className='link' to='/'><img src={button} alt='Home'/></Link>
+      <Link className='link' to='/stash'><img src={buttonStash} alt='Stash'/></Link>
       </div>
       
     <div className={`main-container ${isVisible ? 'visible' : ''}`}>

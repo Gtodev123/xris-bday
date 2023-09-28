@@ -8,9 +8,29 @@
     overflow: auto;
 }
 
-.stashH2 {
-    color: rgb(102, 51, 153);
-    text-align: center;
+.center {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.center h2{
+  color: rgba(228, 179, 20, 0.096);
+  font-size: 25px;
+  text-transform: uppercase;
+  background-image: url(https://cdn-images-1.medium.com/max/2000/1*Jalb56N34pBIGCjQULtW3A.jpeg);
+  -webkit-background-clip: text;
+  animation: background-text-animation 15s linear infinite;
+}
+@keyframes background-text-animation {
+  0%{
+    background-position: left 0px top 50%;
+  }
+  50%{
+    background-position: left 1500px top 50%;
+  }
+  100%{
+    background-position: left 0px top 50%;
+  }
 }
 
 .content {
@@ -20,7 +40,7 @@
     justify-content: column;
     height: 28rem;
     width: 45rem;
-    background: linear-gradient(215deg, rgba(0, 0, 0, 0.3), rgba(51, 64, 93, 1) 85%);
+    background: linear-gradient(215deg, rgba(0, 0, 0, 0.3), rgba(207, 75, 75, 0.582) 85%);
     border-radius: 8px;
     box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
     margin: 0 8px 8px 8px;
@@ -39,46 +59,51 @@
 
 }
 .search-input {
+    text-transform: capitalize;
     width: 300px;
     height: 20px;
     border: 2px solid #ccc;
-    border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+    border-radius: 4px; /* Rounded corners on the left */
     background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
     flex: 1;
-    color: white;
+    color: rgb(221, 221, 221);
   }
 
   .addItem {
+    text-transform: capitalize;
     width: 6rem;
     height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+    border: 2px ridge #ccc;
+    border-radius: 4px; /* Rounded corners on the left */
     background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
     color: white;
+    margin-right: 0.2rem;
   }
  
  .description {
   width: 8rem;
     height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+    border: 2px ridge #ccc;
+    border-radius: 4px; /* Rounded corners on the left */
     background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
     color: white;
+    margin-right: 0.2rem;
  }
 
  .quantity {
-  width: 2rem;
+  width: 2.5rem;
   height: 20px;
-  border: 2px solid #ccc;
-  border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+  border: 2px ridge #ccc;
+  border-radius: 5px; /* Rounded corners on the left */
   background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
   color: white;
+  margin-right: 0.2rem;
 }
 
   .search-button {
   margin-left: 10px;;
   border: 2px solid #ccc;
-  border-radius: 0 4px 4px 0; /* Rounded corners on the right */
+  border-radius: 4px; /* Rounded corners on the right */
   background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
   cursor: pointer;
   color: white;
@@ -86,11 +111,13 @@
 
   .submit-button {
     border: 2px solid #ccc;
-    border-radius: 0 4px 4px 0; /* Rounded corners on the right */
+    border-radius: 4px; /* Rounded corners on the right */
     background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
     cursor: pointer;
     color: white;
+    margin-right: 0.2rem;
   }
+  
 
   .search-button:hover {
     background-color: rgba(0, 0, 0, 0.2);
@@ -115,7 +142,6 @@ table {
 }
 
 th, td {
-  padding: 10px;
   border: 1px solid #a5a5a5c9;
   text-align: center;
 }
@@ -126,4 +152,62 @@ th {
 
 tr:hover {
   background-color: #fffdfd4f;
+}
+
+.myButton {
+	background-color:#9f9eac52;
+	border:1px solid #4e6096;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+  margin-right: 0.2rem;
+}
+.myButtonDelete {
+	background-color:#9f9eac52;
+	border:1px solid #4e6096;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButtonDelete:hover{
+  background-color:#476e9e;
+  color:red
+}
+.myButton:hover {
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.actions {
+  max-width: 10px;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+}
+
+.x-button {
+  border: 2px solid #ccc;
+  border-radius: 4px; /* Rounded corners on the right */
+  background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
+  cursor: pointer;
+  color: rgb(218, 15, 15);
+  font-weight: bold;
 }
