@@ -39,7 +39,6 @@ function App() {
 
     <Routes>
       <Route path='/' element={<Home />}></Route>
-      <Route path='/stash' element={<Stash />}></Route>
     </Routes>
   </div>
   </div>
