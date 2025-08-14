@@ -9,6 +9,17 @@ export default function App() {
   const contentRefs = useRef([]);
   const [visible, setVisible] = useState([]);
 
+
+  useEffect(() => {
+    const setVh = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,7 +56,7 @@ export default function App() {
         className={`content-section ${visible[0] ? "visible" : ""}`}
       >
         <h1>
-          {["🎂 Първи рожден ден", "Християн", "26.09.2025 🎈"].map((text, i) => (
+          {["Първи рожден ден," ,"Християн - 26.09.2025"].map((text, i) => (
             <span key={i} className="fade-line" style={{ transitionDelay: `${i * 0.3}s` }}>
               {text}
               <br />
@@ -70,9 +81,9 @@ export default function App() {
         data-index={1}
         className={`content-section ${visible[1] ? "visible" : ""}`}
       >
-        <p><b>📅 Дата:</b> 26 Септември 2025</p>
-        <p><b>📍 Час:</b> 17:00</p>
-        <p><b>📍 Локация:</b> Ресторант Авокадо</p>
+        <h4><b>📅 Дата:</b> 26 Септември 2025</h4>
+        <h4><b>📍 Час:</b> 17:00</h4>
+        <h4><b>📍 Локация:</b> Ресторант Авокадо</h4>
       </div>
 
       {/* Фиксиран бутон */}

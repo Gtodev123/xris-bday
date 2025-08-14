@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap');
+:root {
+  --vh: 100vh; /* fallback за desktop */
+}
 
+@media (max-width: 600px) {
+  :root {
+    --vh: 100%; /* временно, ще се пресметне в JS */
+  }
+}
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow-x: hidden; /* блокира хоризонталния скрол */
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  min-height: 100%;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; /* основен текст */
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* блокира хоризонталния скрол */
 }
 
-h1, h2, h3, .content-section h1 {
+h1, p , .content-section h1 {
   font-family: 'Poppins', sans-serif; /* заглавия */
 }
 
@@ -19,17 +26,13 @@ h1, h2, h3, .content-section h1 {
   box-sizing: inherit;
 }
 
-body {
-  overflow-y: auto;
-}
-
 .app {
-  text-align: center;
   position: relative;
   width: 100%;
-  display: block;
+  min-height: 100vh; /* расте с контента */
+  text-align: center;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: visible; /* скрол на съдържанието */
   
   background-image: url('./assets/1.jpg');
   background-size: cover;
@@ -43,12 +46,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh; /* реална височина на viewport */
   z-index: 0;
   pointer-events: none;
-  overflow: hidden; /* предотвратява появата на хоризонтален скрол от анимациите */
+  overflow: hidden;
 }
-
 /* Контейнери с текст */
 .content-section {
   position: relative;
@@ -59,7 +61,7 @@ body {
   max-width: 500px;
   margin: 40px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.288);
+  background: rgba(255, 255, 255, 0.445);
   border-radius: 12px;
   box-shadow: 5px 5px 5px rgba(248, 248, 248, 0.6);
 }
@@ -81,10 +83,10 @@ body {
   transform: translateY(0);
 }
 
-/* Фиксиран бутон */
+/* Бутон */
 .invite-button {
-  display: block;          /* за да работи margin: auto */
-  margin: 2rem auto 1rem auto; /* 2rem отгоре, автоматично центриране хоризонтално */
+  display: block;
+  margin: 2rem auto 1rem auto; /* центриране и отстояние отдолу */
   background: #ff69b4;
   border: none;
   color: white;
@@ -102,22 +104,25 @@ body {
 /* Mobile */
 @media (max-width: 600px) {
   .app {
-    background-position: top center; /* центрира важната част на снимката */
-    min-height: auto;               /* позволяваме скрол на съдържанието */
+    background-position: top center;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    white-space: normal; /* позволяваме пренасяне на редове */
   }
 
   .content-section {
-    width: 90%;      /* повече пространство за малки екрани */
-    padding: 15px;   /* намалено padding */
-    font-size: 14px; /* по-малък текст за мобилни */
+    width: 90%;
+    padding: 15px;
+    font-size: 14px;
   }
 
   .invite-button {
     position: relative; /* вече не е fixed */
-    display: block;
-    margin: 2rem auto 3rem auto; /* центриране и отстояние от долу */
     width: 80%;
     padding: 1rem;
     font-size: 16px;
+    margin: 2rem auto 1rem auto; /* отстояние отдолу */
   }
 }
