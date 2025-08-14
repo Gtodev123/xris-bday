@@ -1,49 +1,123 @@
-@import url('https://fonts.cdnfonts.com/css/diablo');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap');
 
-/* Reset default margin and padding */
-body, html {
+html, body {
   margin: 0;
   padding: 0;
-}
-
-/* Set a background color for the entire page */
-.App {
-  background-image: url("https://wallpapers.com/images/featured/diablo-2-resurrected-y2kyo5vzff6o8nkn.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  width: 100vw;
-  height: 100vh;
-
-}
-.main-container {
   width: 100%;
-  height: fit-content;
+  height: 100%;
+  overflow-x: hidden; /* блокира хоризонталния скрол */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* основен текст */
+}
+
+h1, h2, h3, .content-section h1 {
+  font-family: 'Poppins', sans-serif; /* заглавия */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-y: auto;
+}
+
+.app {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: visible;
+  
+  background-image: url('./assets/1.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Анимации зад съдържанието */
+.animations {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden; /* предотвратява появата на хоризонтален скрол от анимациите */
+}
+
+/* Контейнери с текст */
+.content-section {
+  position: relative;
+  z-index: 5;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.288);
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px rgba(248, 248, 248, 0.6);
 }
 
-.main-container.visible {
+.content-section.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-
-h2 {
-  font-family: 'Diablo', sans-serif;
-  color:red;
+.fade-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 10px;
+.content-section.visible .fade-line {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.link {
-  text-decoration: none;
+/* Фиксиран бутон */
+.invite-button {
+  display: block;          /* за да работи margin: auto */
+  margin: 2rem auto 1rem auto; /* 2rem отгоре, автоматично центриране хоризонтално */
+  background: #ff69b4;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.link img {
-  width: 200px;
-  cursor: url('./asets/cursor.png'), auto;
+
+.invite-button:hover {
+  background: #ffc74f;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .app {
+    background-position: top center; /* центрира важната част на снимката */
+    min-height: auto;               /* позволяваме скрол на съдържанието */
+  }
+
+  .content-section {
+    width: 90%;      /* повече пространство за малки екрани */
+    padding: 15px;   /* намалено padding */
+    font-size: 14px; /* по-малък текст за мобилни */
+  }
+
+  .invite-button {
+    position: relative; /* вече не е fixed */
+    display: block;
+    margin: 2rem auto 3rem auto; /* центриране и отстояние от долу */
+    width: 80%;
+    padding: 1rem;
+    font-size: 16px;
+  }
 }

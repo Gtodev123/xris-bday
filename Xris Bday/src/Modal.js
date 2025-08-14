@@ -1,5 +1,5 @@
 import React from 'react';
-import './Stash.css';
+import './Modal.css';
 import { useEffect , useState } from 'react';
 import {db} from './firebase-config'
 import {addDoc, query ,collection, onSnapshot, deleteDoc , doc , setDoc} from 'firebase/firestore'
