@@ -64,7 +64,7 @@ export default function App() {
           ))}
         </h1>
         <p className="fade-line" style={{ transitionDelay: "1s" }}>
-  Каня Вас, скъпи приятели и роднини
+  Каня Вас, скъпи приятели и роднини.
 </p>
 <p className="fade-line" style={{ transitionDelay: "1.2s" }}>
   В този дълго чакан ден аз ще имам Ден Рожден!
