@@ -63,17 +63,24 @@ export default function App() {
             </span>
           ))}
         </h1>
-        <p className="fade-line" style={{ transitionDelay: "0.9s" }}>
-          Каня Вас, скъпи приятели и роднини
-          В този дълго чакан ден аз ще имам Ден Рожден!
-          Ще съм слънчице засмяно, все пак ставам на годинка само.
-          Торта вкусна с една свещичка сладко ще си хапнем всички!!!
-          С песни, танци и игри, с детски грейнали очи
-          искам в този ден и час, да празнувате с нас!
-        </p>
-        <p className="fade-line" style={{ transitionDelay: "1.2s" }}>
-          Ще има изненади, игри и много забавления!
-        </p>
+        <p className="fade-line" style={{ transitionDelay: "1s" }}>
+  Каня Вас, скъпи приятели и роднини
+</p>
+<p className="fade-line" style={{ transitionDelay: "1.2s" }}>
+  В този дълго чакан ден аз ще имам Ден Рожден!
+</p>
+<p className="fade-line" style={{ transitionDelay: "1.4s" }}>
+  Ще съм слънчице засмяно, все пак ставам на годинка само.
+</p>
+<p className="fade-line" style={{ transitionDelay: "1.6s" }}>
+  Торта вкусна с една свещичка сладко ще си хапнем всички!!!
+</p>
+<p className="fade-line" style={{ transitionDelay: "1.8s" }}>
+  С песни, танци и игри, с детски грейнали очи
+</p>
+<p className="fade-line" style={{ transitionDelay: "2s" }}>
+  искам в този ден и час, да празнувате с нас!
+</p>
       </div>
 
       <div
