@@ -1,213 +1,224 @@
-
-.stash-container {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    overflow: auto;
-}
-
-.center {
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #a3d8f4, #fef9f3); /* Небе-пастел */
+  backdrop-filter: blur(6px);
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-.center h2{
-  color: rgba(228, 179, 20, 0.096);
-  font-size: 25px;
-  text-transform: uppercase;
-  background-image: url(https://cdn-images-1.medium.com/max/2000/1*Jalb56N34pBIGCjQULtW3A.jpeg);
-  -webkit-background-clip: text;
-  animation: background-text-animation 15s linear infinite;
-}
-@keyframes background-text-animation {
-  0%{
-    background-position: left 0px top 50%;
-  }
-  50%{
-    background-position: left 1500px top 50%;
-  }
-  100%{
-    background-position: left 0px top 50%;
-  }
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow: hidden;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: column;
-    height: 28rem;
-    width: 45rem;
-    background: linear-gradient(215deg, rgba(0, 0, 0, 0.3), rgba(207, 75, 75, 0.582) 85%);
-    border-radius: 8px;
-    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
-    margin: 0 8px 8px 8px;
-    transition: 0.3s;
-    border: 2px solid transparent;
-    overflow-y: auto; /* Enable vertical scrollbar if needed */
+/* Звездички и облачета */
+.modal-overlay::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url('https://toppng.com/uploads/preview/related-wallpapers-little-prince-flat-vector-11562856084oqdoed3haf.png') repeat;
+  opacity: 0.3;
+  pointer-events: none;
+  animation: floatStars 40s linear infinite;
 }
 
-.searchbar {
-    display: flex;
-    max-width: 400px;
-    color: white;
-    padding: 1rem;
-    height: 15%;
-
-
-}
-.search-input {
-    text-transform: capitalize;
-    width: 300px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 4px; /* Rounded corners on the left */
-    background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
-    flex: 1;
-    color: rgb(221, 221, 221);
-  }
-
-  .addItem {
-    text-transform: capitalize;
-    width: 6rem;
-    height: 20px;
-    border: 2px ridge #ccc;
-    border-radius: 4px; /* Rounded corners on the left */
-    background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
-    color: white;
-    margin-right: 0.2rem;
-  }
- 
- .description {
-  width: 8rem;
-    height: 20px;
-    border: 2px ridge #ccc;
-    border-radius: 4px; /* Rounded corners on the left */
-    background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
-    color: white;
-    margin-right: 0.2rem;
- }
-
- .quantity {
-  width: 2.5rem;
-  height: 20px;
-  border: 2px ridge #ccc;
-  border-radius: 5px; /* Rounded corners on the left */
-  background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
-  color: white;
-  margin-right: 0.2rem;
+@keyframes floatStars {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-200px, -200px); }
 }
 
-  .search-button {
-  margin-left: 10px;;
-  border: 2px solid #ccc;
-  border-radius: 4px; /* Rounded corners on the right */
-  background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
+/* Fullscreen Modal */
+.modal-fullscreen {
+  width: 95%;
+  max-width: 1000px;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.534);
+  border-radius: 24px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(219, 10, 10, 0.25);
+  color: #333;
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+  padding-bottom: 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffcc00; /* звезда */
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #666;
   cursor: pointer;
-  color: white;
-  }
+  transition: color 0.2s ease;
+}
+.modal-close:hover {
+  color: #ffcc00;
+}
 
-  .submit-button {
-    border: 2px solid #ccc;
-    border-radius: 4px; /* Rounded corners on the right */
-    background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
-    cursor: pointer;
-    color: white;
-    margin-right: 0.2rem;
-  }
-  
+/* Content Area */
+.modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .search-button:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
+/* Form Styling */
+.modal-fullscreen form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+ 
+/* Inputs и Textarea */
+.modal-fullscreen form input,
+.modal-fullscreen form textarea,
+.modal-fullscreen .search-input {
+  display: block;
+  width: 100%;
+  min-width: 200px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.2px solid rgb(24, 20, 20);
+  background: rgb(255, 255, 255);
+  color: #000000;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
 
-  .search {
-    display: flex;
-    padding-top: 10px;
-  }
+.modal-fullscreen form textarea {
+  resize: vertical; /* позволява вертикално оразмеряване */
+  min-height: 80px; /* минимална височина */
+}
 
-  
+.modal-fullscreen form input:focus,
+.modal-fullscreen form textarea:focus,
+.modal-fullscreen .search-input:focus {
+  border-color: #4cafef;
+  box-shadow: 0 0 0 3px rgba(76, 175, 239, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.modal-fullscreen form input::placeholder,
+.modal-fullscreen form textarea::placeholder,
+.modal-fullscreen .search-input::placeholder {
+  color: #bbb;
+  opacity: 1;
+}
+
+
+/* Buttons */
+.modal-fullscreen button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 16px;
+  background: #ffcc00;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.modal-fullscreen button:hover {
+  background: #ffd633;
+}
+.modal-fullscreen button:active {
+  transform: translateY(1px);
+}
+
+/* Table */
 .table-container {
-    width: 80%;
-    margin-top: 5px;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
 }
 
 table {
-  color: rgba(255, 255, 255, 0.705);
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-th, td {
-  border: 1px solid #a5a5a5c9;
-  text-align: center;
+table thead {
+  background: #ffeeba;
 }
-
-th {
-  background-color: #cacaca50;
+.modal-fullscreen form input::placeholder,
+.modal-fullscreen form textarea::placeholder,
+.modal-fullscreen .search-input::placeholder {
+  color: rgba(5, 5, 5, 0.7); /* по-тъмен от #bbb */
+  opacity: 1;
 }
-
-tr:hover {
-  background-color: #fffdfd4f;
-}
-
-.myButton {
-	background-color:#9f9eac52;
-	border:1px solid #4e6096;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:12px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
-  margin-right: 0.2rem;
-}
-.myButtonDelete {
-	background-color:#9f9eac52;
-	border:1px solid #4e6096;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:12px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
-}
-.myButtonDelete:hover{
-  background-color:#476e9e;
-  color:red
-}
-.myButton:hover {
-	background-color:#476e9e;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .actions {
-  max-width: 10px;
-}
-
-.button-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.add-content {
   display: flex;
-  justify-content: space-between;
-  max-width: 400px;
+  gap: 8px;
 }
 
-.x-button {
-  border: 2px solid #ccc;
-  border-radius: 4px; /* Rounded corners on the right */
-  background-color: rgba(0, 0, 0, 0.1); /* Transparent background */
-  cursor: pointer;
-  color: rgb(218, 15, 15);
-  font-weight: bold;
+.myButton {
+  background: #4caf50;
+}
+
+.myButtonDelete {
+  background: #e74c3c;
+}
+
+.myButton:hover {
+  background: #3c9442;
+}
+
+.myButtonDelete:hover {
+  background: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-fullscreen {
+    height: 95%;
+    padding: 15px;
+  }
+
+  .modal-fullscreen form {
+    flex-direction: column;
+  }
+
+  .modal-fullscreen form input {
+    width: 100%;
+  }
 }

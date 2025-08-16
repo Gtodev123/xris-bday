@@ -56,13 +56,18 @@ export default function App() {
         className={`content-section ${visible[0] ? "visible" : ""}`}
       >
         <h1>
-          {["Първи рожден ден," ,"Християн - 26.09.2025"].map((text, i) => (
-            <span key={i} className="fade-line" style={{ transitionDelay: `${i * 0.3}s` }}>
-              {text}
-              <br />
-            </span>
-          ))}
-        </h1>
+  <span className="fade-line" style={{ transitionDelay: `0s` }}>
+    Първи рожден ден,
+    <br />
+  </span>
+  <span className="fade-line" style={{ transitionDelay: `0.3s` }}>
+    Християн
+    <br />
+  </span>
+  <span className="fade-line date-small" style={{ transitionDelay: `0.6s` }}>
+    26.09.2025
+  </span>
+</h1>
         <p className="fade-line" style={{ transitionDelay: "1s" }}>
   Каня Вас, скъпи приятели и роднини.
 </p>
@@ -76,10 +81,10 @@ export default function App() {
   Торта вкусна с една свещичка сладко ще си хапнем всички!!!
 </p>
 <p className="fade-line" style={{ transitionDelay: "1.8s" }}>
-  С песни, танци и игри, с детски грейнали очи
-</p>
+  С песни, танци и игри, с детски грейнали очи.
+</p> 
 <p className="fade-line" style={{ transitionDelay: "2s" }}>
-  искам в този ден и час, да празнувате с нас!
+  Искам в този ден и час, да празнувате с нас!
 </p>
       </div>
 
@@ -89,17 +94,17 @@ export default function App() {
         className={`content-section ${visible[1] ? "visible" : ""}`}
       >
         <h4><b>📅 Дата:</b> 26 Септември 2025</h4>
-        <h4><b>📍 Час:</b> 17:00</h4>
+        <h4><b>⏰ Час:</b> 17:00</h4>
         <h4><b>📍 Локация:</b> Ресторант Авокадо</h4>
       </div>
 
       {/* Фиксиран бутон */}
       <button
-        className="invite-button fixed bottom-5 left-1/2 transform -translate-x-1/2 z-10"
-        onClick={() => setOpenModal(true)}
-      >
-        Потвърди присъствие
-      </button>
+  className="invite-button fixed bottom-5 left-1/2 transform -translate-x-1/2 z-10"
+  onClick={() => setOpenModal(true)}
+>
+  Потвърди присъствие до 15.09
+</button>
 
       {openModal && <Modal onClose={() => setOpenModal(false)} />}
     </div>
