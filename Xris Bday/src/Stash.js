@@ -12,6 +12,7 @@ function Stash() {
   const [isEdit, setIsEdit] = useState(false);
   const [tempid, setTempId] = useState('');
   const [search, setSearch] = useState('');
+  const [showThanks, setShowThanks] = useState(false);
 
   useEffect(() => {
     const q = query(itemsCollectionRef);
@@ -31,6 +32,7 @@ function Stash() {
     setNewQuantity('');
     setNewQuantityKids('');
     setIsEdit(false);
+
   };
 
   const createItem = async (e) => {
@@ -38,6 +40,7 @@ function Stash() {
     let newItemCapital = newItem.charAt(0).toUpperCase() + newItem.slice(1);
     await addDoc(itemsCollectionRef, { name: newItemCapital, description: newDescription, quantity: newQuantity , quantityKids: newQuantityKids });
     clearForm();
+    setShowThanks(true);
   };
 
   const deleteItem = async (id) => {
@@ -65,27 +68,24 @@ function Stash() {
 
   return (
     <div className="stash-container">
-      <div className="center">
-        <h2>Потвърдете вашето присъствие</h2>
-      </div>
-      <div className="content">
-        <div className="searchbar">
-          <div className="inputs">
-            <form onSubmit={createItem} className="add-content">
-              <input className="addItem" required type="text" style={{textTransform: "capitalize"}} placeholder="Име и Фамилия" value={newItem} onChange={(e) => setNewItem(e.target.value)} />
-              <input className="quantity" type="number" placeholder="Брой Гости Деца" value={newQuantity} onChange={(e) => setNewQuantity(e.target.value)} />
-              <input className="quantityKids" type="number" placeholder="Брой Гости Възрастни" value={newQuantityKids} onChange={(e) => setNewQuantityKids(e.target.value)} />
-              {isEdit ? (
-                <>
-                  <button className="submit-button" onClick={updateItem}>Edit</button>
-                  <button className="x-button" onClick={clearForm}>X</button>
-                </>
-              ) : (
-                <button className="submit-button" type="submit">Запис</button>
-              )}
-            </form>
-          </div>
-        </div>
+ {!showThanks && (
+  <div className="center">
+    <h2>Потвърдете вашето присъствие</h2>
+  </div>
+)}
+      {!showThanks ? (
+    <form onSubmit={createItem} className="add-content">
+      <input className="addItem" required type="text" style={{textTransform: "capitalize"}} placeholder="Име и Фамилия" value={newItem} onChange={(e) => setNewItem(e.target.value)} />
+      <input className="quantity" type="number" placeholder="Брой Гости Деца" value={newQuantityKids} onChange={(e) => setNewQuantityKids(e.target.value)} />
+      <input className="quantityKids" type="number" placeholder="Брой Гости Възрастни" value={newQuantity} onChange={(e) => setNewQuantity(e.target.value)} />
+      <button className="submit-button" type="submit">Запис</button>
+    </form>
+  ) : (
+    <div className="thank-you-message">
+      <h3>Благодаря, че ще присъствате! 👍
+      </h3>
+    </div>
+  )}
       {/*  <div className="table-container">
   <table>
     <thead>
@@ -119,7 +119,6 @@ function Stash() {
     </tbody>
   </table>
 </div>*/}
-      </div>
     </div>
   );
 }
