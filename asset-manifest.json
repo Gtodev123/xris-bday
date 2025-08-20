@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/xris-bday/static/css/main.e07fef33.css",
+    "main.js": "/xris-bday/static/js/main.2b2663ca.js",
+    "static/media/1.jpg": "/xris-bday/static/media/1.b2a9f70e309ba52cb62b.jpg",
+    "index.html": "/xris-bday/index.html",
+    "main.e07fef33.css.map": "/xris-bday/static/css/main.e07fef33.css.map",
+    "main.2b2663ca.js.map": "/xris-bday/static/js/main.2b2663ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e07fef33.css",
+    "static/js/main.2b2663ca.js"
+  ]
+}
